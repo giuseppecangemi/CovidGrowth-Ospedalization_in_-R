@@ -18,8 +18,7 @@ pd <- melt(p[c("t", "novax", "ma_novax",
                "sivax", "ma_sivax", "somma_mediamobile")], id="t")
 
 ggplot(data=pd, aes(x=t, y=value, colour=variable, group=variable)) +
-  geom_line() + theme_linedraw()+ 
-  labs(title="Decessi giornalieri per status vaccinale e incidenza (si assume 2/3 novax)") +
-  xlab("Giorni") + 
-  annotate("text", x =300, y = -80, label = "@giuseppecangemi")+
-  coord_cartesian(ylim = c(-10, 700), clip = "off")
+  geom_line() + theme_linedraw() + 
+    labs(title="Decessi giornalieri per status vaccinale e incidenza (si assume 2/3 novax)") +
+      xlab("Giorni") + annotate("text", x =300, y = -80, label = "@giuseppecangemi")+
+        coord_cartesian(ylim = c(-10, 700), clip = "off")
