@@ -4,9 +4,9 @@ d1$t1 <- d1
 d_melt <- melt(d[c("t", "ricoverati_con_sintomi", "terapia_intensiva", 
                 "totale_ospedalizzati")], id="t")
                 
-ggplot(data=mee, aes(x=t, y=value,colour=variable,group=variable))+ geom_line()+
+ggplot(data=d_melt, aes(x=t, y=value,colour=variable,group=variable))+ geom_line()+
         labs(title="Andamento Ricoveri-Terapie Intensive da inizio pandemia")+
-          annotate("text", x =0, y = -4300, label = "Kangemi_Edu")+
+          annotate("text", x =0, y = -4300, label = "@giuseppecangemi")+
             coord_cartesian(ylim = c(-100, 40000), clip = "off")
 
 
@@ -15,7 +15,7 @@ d2_melt <- melt(d1[c("t", "ricoverati_con_sintomi", "terapia_intensiva",
 
 ggplot(data=d2_melt, aes(x=t, y=value,colour=variable,group=variable))+ geom_line()+
   labs(title="Andamento Ricoveri-Terapie Intensive da OTTOBRE2021")+
-    annotate("text", x =490, y = -4300, label = "Kangemi_Edu")+
+    annotate("text", x =490, y = -4300, label = "@giuseppecangemi")+
       coord_cartesian(ylim = c(-100, 22000), clip = "off")
 
 #da t>=313
@@ -41,7 +41,7 @@ d4_melt <- melt(p[c("t", "ingressi_terapia_intensiva", "ti_media_mobile",
 
 ggplot(data=d4_melt, aes(x=t, y=value, colour=variable, group=variable))+
   geom_line() + theme_linedraw() + labs(title="Andamento Giornaliero Ingressi Terapia Intensiva e Ricoveri (2021)") +
-    xlab("Giorni") + #geom_vline(xintercept = 385, lty=2) + annotate("text", x =313, y = -960, label = "Kangemi_Edu")+
+    xlab("Giorni") + #geom_vline(xintercept = 385, lty=2) + annotate("text", x =313, y = -960, label = "@giuseppecangemi")+
       coord_cartesian(ylim = c(-800, 800), clip = "off")                        
 
 #######from the beginning!!!!!!
@@ -55,4 +55,4 @@ d5_melt <- melt(d[c("t", "ingressi_terapia_intensiva", "ti_media_mobile",
 
 ggplot(data=d5_melt, aes(x=t, y=value, colour=variable, group=variable))+ geom_line() + theme_linedraw() + 
   labs(title="Andamento Giornaliero Ingressi Terapia Intensiva e Ricoveri da inizio pandemia") +
-    xlab("Giorni") + annotate("text", x =0, y = -1530, label = "Kangemi_Edu")+ coord_cartesian(ylim = c(-1200, 2200), clip = "off")
+    xlab("Giorni") + annotate("text", x =0, y = -1530, label = "@giuseppecangemi")+ coord_cartesian(ylim = c(-1200, 2200), clip = "off")
