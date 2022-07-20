@@ -10,7 +10,7 @@ library(zoo)
 library(RColorBrewer)
 
 
-d <- read_excel("/Users/giuseppecangemi/Desktop/Covid19_ITA/Covi19_Italy.xlsx")
+d <- read_excel("/Users/...Covi19_Italy.xlsx")
 View(d)
 
 ggplot(data=d, aes(x=t, y=nuovi_positivi)) + geom_line() + geom_point()
